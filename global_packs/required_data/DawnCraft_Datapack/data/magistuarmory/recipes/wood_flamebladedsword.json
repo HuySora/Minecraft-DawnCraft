@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x#y",
+    "#z#",
+    " # "
+  ],
+  "key": {
+	"x": {
+      "item": "simple_mobs:occult_lump"
+	},
+    "#": {
+      "item": "minecraft:blaze_powder"
+    },
+	"y": {
+	  "item": "irons_spellbooks:arcane_salvage"
+	},
+    "z": {
+      "item": "magistuarmory:wood_zweihander"
+    }
+  },
+  "result": {
+    "item": "magistuarmory:wood_flamebladedsword",
+    "count": 1
+  }
+}

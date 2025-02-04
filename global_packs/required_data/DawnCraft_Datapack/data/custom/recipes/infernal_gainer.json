@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "ef_weapon_extended:diamond_knuckles"
+  },
+  "addition": {
+    "item": "simple_mobs:amalgamation"
+  },
+  "result": {
+    "item": "epicfight:infernal_gainer"
+  }
+}

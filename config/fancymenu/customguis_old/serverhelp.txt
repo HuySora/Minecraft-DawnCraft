@@ -1,0 +1,3 @@
+identifier = serverhelp
+title = 
+allowesc = true

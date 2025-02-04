@@ -1,0 +1,32 @@
+{
+	"parent": "quest_giver:root",
+	"reputation": 15,
+	"icon": "minecraft:iron_sword",
+	"start": {
+		"title": {
+			"text": "So?"
+		},
+		"description": {
+			"text": "I can teach you the skill - Rain Cutter for 25 emeralds."
+		}
+	},
+	"complete": {
+		"title": {
+			"text": "Thanks!"
+		},
+		"description": {
+			"text": "Here you go adventurer!"
+		}
+	},
+	"tasks": [{
+		"item": {
+			"item": "minecraft:emerald"
+		},
+      "id": "quest_giver:gift",
+      "times": 25
+	}],
+	"rewards": [{
+		"command": "give @p epicfight:skillbook{skill:\"sword_soaring:rain_cutter\"}",
+		"id": "quest_giver:command"
+	}]
+}

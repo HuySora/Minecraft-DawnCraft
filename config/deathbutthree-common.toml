@@ -1,0 +1,6 @@
+
+[DeathButThree]
+	#Before ';': boss' registry name
+	#After ';': its max death times
+	ValidBossesAndMaxDeathTimes = ["bosses_of_mass_destruction:gauntlet;3", "bosses_of_mass_destruction:gauntlet;3", "bosses_of_mass_destruction:lich;3", "bosses_of_mass_destruction:void_blossom;3", "bosses_of_mass_destruction:obsidilith;3", "irons_spellbooks:dead_king;3", "ba_bt:land_golem;3", "ba_bt:ocean_golem;3", "meetyourfight:dame_fortuna;3", "alexsmobs:warped_mosco;3", "alexsmobs:void_worm;3", "aquamirae:captain_cornelia;3", "illageandspillage:spiritcaller;3", "illageandspillage:magispeller;3", "cataclysm:ender_golem;3", "mowziesmobs:ferrous_wroughtnaut;3", "mowziesmobs:frostmaw;3", "darkersouls:nameless_king;3", "darkersouls:nameless_king;3", "simple_mobs:skeletonlord;3", "simple_mobs:sentinel_knight;3", "simple_mobs:knight_4;3", "simple_mobs:morgott;3", "simple_mobs:morgott;3", "simple_mobs:gael;3", "simple_mobs:martian;3", "simple_mobs:ent;3", "simple_mobs:fire_giant;3", "simple_mobs:nine_tails;3", "simple_mobs:cave_dweller;3", "simple_mobs:cave_dweller;3", "simple_mobs:giant;3", "simple_mobs:corrupted_ogre;3", "simple_mobs:dragon_lord;3", "simple_mobs:elemental_deity;3", "simple_mobs:notch_boss;3", "simple_mobs:notch_boss;3", "simple_mobs:herobrine;3", "simple_mobs:samurai_4;3", "simple_mobs:samurai_5;3", "cataclysm:ignis;3"]
+

@@ -1,0 +1,466 @@
+{
+    "model": "epicfight:entity/biped_old_texture",
+    "armature": "epicfight:entity/biped",
+    "renderer": "minecraft:zombie",
+    "isHumanoid": true,
+    "faction": "neutral",
+    "attributes": {
+        "impact": 0.5,
+        "armor_negation": 0.0,
+        "max_strikes": 1,
+        "chasing_speed": 1.0,
+                "scale": 1.8
+    },
+    "default_livingmotions": {
+        "idle": "epicfight:biped/living/idle",
+        "walk": "epicfight:biped/living/walk",
+        "chase": "epicfight:biped/living/walk",
+        "mount": "epicfight:biped/living/mount",
+                "fall": "epicfight:biped/living/fall",
+        "death": "epicfight:biped/living/death"
+	},
+	"humanoid_weapon_motions": [
+		{
+			"weapon_categories": ["longsword"],
+			"style":"common",
+			"livingmotions": {
+				"walk": "epicfight:biped/living/run_longsword",
+				"chase": "epicfight:biped/living/run_longsword"
+			}
+		}
+	],
+	"stun_animations": {
+		"short": "epicfight:biped/combat/hit_short",
+		"long": "epicfight:biped/combat/hit_long",
+		"knockdown": "epicfight:biped/combat/knockdown",
+		"fall": "epicfight:biped/living/landing"
+	},
+	"combat_behavior": [
+		{        
+            "weapon_categories": ["longsword"],
+			"style": "common",
+			"behavior_series": [
+				{       
+                    "weight": 120.0,
+					"cooldown": 600,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 7.0, "max": 20.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/ruine_comet"
+                        }
+					]
+				},
+				{
+					"weight": 1.0,
+					"canBeInterrupted": false,
+					"cooldown": 200,
+					"looping": false,
+					"behaviors": [
+                        {
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "epicfight:biped/combat/greatsword_auto1"
+						},
+                        {
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 3.0}
+							],
+							"animation": "epicfight:biped/combat/greatsword_auto2"
+						},
+                        {
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 4.0}
+							],
+							"animation": "epicfight:biped/combat/longsword_liechtenauer_auto1"
+						}						
+                              ]                 
+				},
+				{
+					"weight": 1.0,
+					"canBeInterrupted": false,
+					"looping": false,
+					"cooldown": 200,
+					"behaviors": [
+                        {
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 4.0}
+							],
+							"animation": "epicfight:biped/combat/longsword_liechtenauer_auto1"
+						},
+                        {
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 4.0}
+							],
+							"animation": "epicfight:biped/combat/longsword_liechtenauer_auto2"
+						},
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 23.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+                        }						
+                    ]                 
+				},
+				{       
+                    "weight": 120.0,
+					"cooldown": 600,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 7.0, "max": 20.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/ruine_comet"
+                        }
+					]
+				},  
+				{       
+                    "weight": 10.0,
+					"cooldown": 700,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/torment_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/combat/torment_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 20.0}
+							],
+							"animation": "wom:biped/combat/torment_charged_attack_3"
+                                                }
+					]
+				},
+                {       
+                    "weight": 10.0,
+					"cooldown": 400,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/herrscher_auto_3"
+                         }
+					]
+				},
+                {       
+                    "weight": 20.0,
+					"cooldown": 450,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 5.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/agony_auto_2"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 23.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+                        }
+					]
+				},
+                {       
+                    "weight": 20.0,
+					"cooldown": 200,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 6.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_auto_1"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 6.0}
+							],
+							"animation": "wom:biped/combat/herrscher_auto_3"
+                                                }
+					]
+				},
+                {       
+					"weight": 15.0,
+					"cooldown": 200,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/torment_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "wom:biped/combat/torment_auto_1"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_auto_2"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "wom:biped/combat/herrscher_auto_3"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+						}
+					]
+				},
+                {       
+                    "weight": 20.0,
+					"cooldown": 500,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/torment_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "wom:biped/combat/torment_auto_1"
+                                                }
+					]
+				},
+                {       
+                    "weight": 25.0,
+					"cooldown": 350,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_convert"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 20.0}
+							],
+							"animation": "epicfight:biped/skill/wrathful_lighting"
+                                                }
+					]
+				},
+                    {       
+                    "weight": 25.0,
+					"cooldown": 300,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "epicfight:biped/combat/greatsword_airslash"  
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "epicfight:biped/combat/longsword_auto1"
+                                                }
+					]
+				},  
+                {       
+                    "weight": 25.0,
+					"cooldown": 500,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/ruine_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}
+							],
+							"animation": "wom:biped/combat/herrscher_auto_3"
+                        }
+					]
+				},
+                {       
+                    "weight": 30.0,
+					"cooldown": 350,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 13.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_convert"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 20.0}
+							],
+							"animation": "wom:biped/combat/agony_auto_2"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 20.0}
+							],
+							"animation": "wom:biped/skill/agony_plunge_forward_x"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/combat/torment_auto_1"
+                                                 },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/combat/agony_auto_2"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 20.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+                                                }
+					]
+				}, 
+                {       
+                    "weight": 30.0,
+					"cooldown": 300,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 5.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "epicfight:biped/combat/greatsword_airslash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "epicfight:biped/skill/sweeping_edge"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "epicfight:biped/combat/longsword_dash"
+                                                }
+					]
+				},
+                {       
+                    "weight": 35.0,
+					"cooldown": 350,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 5.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "epicfight:biped/combat/greatsword_airslash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 17.0}
+							],
+							"animation": "wom:biped/combat/agony_airslash"
+                                                }
+					]
+				},
+                {       
+                    "weight": 30.0,
+					"cooldown": 400,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}
+							],
+							"animation": "wom:biped/skill/agony_plunge_forward_x"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/combat/herrscher_auto_3"
+                        }
+					]
+				},
+                {       
+                    "weight": 30.0,
+					"cooldown": 400,
+					"canBeInterrupted": false,
+					"looping": false,
+					"behaviors": [
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}, {"predicate":"within_angle_horizontal", "min": -30.0, "max": 30.0}
+							],
+							"animation": "wom:biped/combat/ruine_dash"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 7.0}
+							],
+							"animation": "epicfight:biped/skill/sweeping_edge"
+                                                },
+						{
+							"conditions": [
+								{"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 10.0}
+							],
+							"animation": "wom:biped/skill/torment_berserk_airslam"
+                        }
+					]
+				}
+             ]
+		}
+	]
+}                    

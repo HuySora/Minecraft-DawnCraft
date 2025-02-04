@@ -1,0 +1,19 @@
+#Wed Apr 03 18:38:34 TRT 2024
+shadowDistance=60.0
+light_brightness=0.5
+Brightness=1.1
+Nearshadowplane=0.09
+defskybox=true
+shadow_samples=16
+waterRefl=true
+Distance_Blur=true
+Contrast=2.3
+wFogDensity=5.0
+Shadows=false
+ColoredShadows=false
+shadowMapResolution=2048
+Rain_Drops=false
+morningFog=true
+Lens_Flares=true
+DoF_Strength=60
+Bloom=true

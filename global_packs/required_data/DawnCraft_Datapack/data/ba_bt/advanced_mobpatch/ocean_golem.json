@@ -1,0 +1,209 @@
+{
+    "model": "epicfight:entity/biped_old_texture",
+    "armature": "epicfight:entity/biped",
+    "renderer": "minecraft:zombie",
+    "isHumanoid": true,
+    "faction": "neutral",
+    "attributes": {
+        "impact": 2,
+        "armor_negation": 0,
+        "max_strikes": 5,
+        "chasing_speed": 0.8,
+        "scale": 1.6,
+        "max_stamina": 1000
+    },
+    "default_livingmotions": {
+        "idle": "epicfight:biped/living/idle",
+        "walk": "epicfight:biped/living/walk",
+        "chase": "epicfight:biped/living/walk",
+        "mount": "epicfight:biped/living/mount",
+        "fall": "epicfight:biped/living/fall",
+        "death": "epicfight:biped/living/death"
+    },
+    "custom_guard_motion": [
+        {
+            "weapon_categories": [
+                "fist"
+            ],
+            "style": "common",
+            "guard": "indestructible:guard/guard_greatsword",
+            "stamina_cost_multiply": 1,
+            "can_block_projectile": true
+        }
+    ],
+    "stun_animations": {
+        "short": "epicfight:biped/combat/hit_short",
+        "long": "epicfight:biped/combat/hit_long",
+        "knockdown": "epicfight:biped/combat/knockdown",
+        "fall": "epicfight:biped/living/landing"
+    },
+    "combat_behavior": [
+        {
+            "weapon_categories": [
+                "fist"
+            ],
+            "style": "common",
+            "behavior_series": [
+                {
+                    "weight": 100,
+                    "canBeInterrupted": true,
+                    "looping": true,
+                    "behaviors": [
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "epicfight:biped/combat/mob_onehand1"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "epicfight:biped/combat/mob_onehand2"
+                        }
+                    ]
+                },
+                {
+                    "weight": 3,
+                    "canBeInterrupted": false,
+                    "looping": false,
+                    "behaviors": [
+                        {
+                            "conditions": [
+                                {
+                                    "predicate": "within_eye_height"
+                                },
+                                {
+                                    "predicate": "within_distance",
+                                    "min": 0,
+                                    "max": 2
+                                }
+                            ],
+                            "animation": "wom:biped/combat/enderblaster_onehand_auto_1"
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "predicate": "within_eye_height"
+                                },
+                                {
+                                    "predicate": "within_distance",
+                                    "min": 0,
+                                    "max": 2
+                                }
+                            ],
+                            "animation": "wom:biped/combat/enderblaster_onehand_auto_2"
+                        }
+                    ]
+                },
+                {
+                    "weight": 20,
+                    "cooldown": 30,
+                    "canBeInterrupted": false,
+                    "looping": false,
+                    "behaviors": [
+                        {
+                            "conditions": [
+                                {
+                                    "predicate": "within_eye_height"
+                                },
+                                {
+                                    "predicate": "within_distance",
+                                    "min": 2,
+                                    "max": 30
+                                },
+                                {
+                                    "predicate": "random_chance",
+                                    "chance": 0.2
+                                }
+                            ],
+                            "guard": 30,
+                            "counter_cost": 0,
+                            "counter_chance": 1,
+                            "counter_speed": 0.5
+                        }
+                    ]
+                },
+                {
+                    "weight": 100,
+                    "canBeInterrupted": true,
+                    "looping": false,
+                    "behaviors": [
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "epicfight:zombie/attack1"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "epicfight:zombie/attack2"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "epicfight:zombie/attack3"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "greater_ratio"}
+                            ],
+                            "animation": "wom:biped/combat/torment_auto_4",
+                            "play_speed": 0.6,
+                            "stamina": 0
+                        }
+                    ]
+                },
+				{
+                    "weight": 10.0,
+					"cooldown": 200.0,
+                    "canBeInterrupted": false,
+                    "looping": false,
+                    "behaviors": [
+						{
+							"conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 15.0}, {"predicate":"health", "health": 0.3296, "comparator": "less_ratio"}
+							],
+							"animation": "wom:biped/combat/torment_charged_attack_1",
+							"play_speed": 0.5,
+							"stamina": 0,
+							"convert_time": 1
+						}						
+                    ]
+                },
+				{
+                    "weight": 100.0,
+					"cooldown": 50.0,
+                    "canBeInterrupted": false,
+                    "looping": false,
+                    "behaviors": [
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "less_ratio"}
+                            ],
+							"play_speed": 2.0,
+                            "animation": "epicfight:zombie/attack1"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "less_ratio"}
+                            ],
+							"play_speed": 2.0,
+                            "animation": "epicfight:zombie/attack2"
+                        },
+                        {
+                            "conditions": [
+                                {"predicate":"within_eye_height"}, {"predicate":"within_distance", "min": 0.0, "max": 2.0}, {"predicate":"health", "health": 0.3296, "comparator": "less_ratio"}
+                            ],
+							"play_speed": 2.0,
+                            "animation": "epicfight:zombie/attack3"
+                        }						
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,12 @@
+{
+  "reputation": 15,
+  "icon": "minecraft:iron_sword",
+  "start": {
+    "title": {
+      "text": "Hey!"
+    },
+    "description": {
+      "text": "I've got an ancient eastern technique I can teach you, for 25 emeralds..."
+    }
+  }
+}
